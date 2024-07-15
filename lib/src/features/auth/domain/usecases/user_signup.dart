@@ -1,13 +1,13 @@
 import 'package:blog_app/src/core/error/failures.dart';
 import 'package:blog_app/src/core/usecase/usecase.dart';
-import 'package:blog_app/src/features/auth/domain/entities/user.dart';
+import 'package:blog_app/src/core/common/entities/user.dart';
 import 'package:blog_app/src/features/auth/domain/repositories/auth_repository.dart';
 import 'package:fpdart/fpdart.dart';
 
 class UserSignUp implements UseCase<UserEntity, UserSignUpParams> {
   final AuthRepository repository;
 
-  UserSignUp({required this.repository});
+  UserSignUp(this.repository);
 
   @override
   Future<Either<Failure, UserEntity>> call(UserSignUpParams params) async {
